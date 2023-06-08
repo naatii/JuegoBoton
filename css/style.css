@@ -1,0 +1,151 @@
+/* Aquí irán los estilos generales del proyecto */
+
+:root{
+    /* Variables principales */
+    --margin: 0;
+    --padding: 0;
+    --font-size: 24px;
+    --none: none;
+    /* Variables principales */
+}
+/* Estilos del loader */
+.loader {
+    /* Variables del loader */
+    --left: 0;
+    --top: 0;
+    --width: 100%;
+    --height: 100%;
+    --z-index: 4;
+    --opacity: .8;
+    --segundos: 20s;
+    --altura-fondo: 50%;
+    --color-fondo: rgb(249,249,249); 
+    /* Variables del loader */
+
+    /* Estilos del loader */
+    position: fixed;
+    left: var(--left);
+    top: var(--top);
+    width: var(--width);
+    height: var(--height);
+    z-index: var(--z-index);
+    background: url("../assets/loader.gif") var(--altura-fondo) var(--altura-fondo) no-repeat var(--color-fondo);
+    opacity: var(--opacity);
+    transition: all var(--segundos);
+    /* Estilos del loader */
+
+}
+/* Estilos del loader */
+/* Estilos generales */
+* {
+    margin: var(--margin);
+    padding: var(--padding);
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+}
+
+/* Estilos del body */
+body{
+    /* declarando las variables del body */
+    --imagen-fondo: url(../assets/bondoAnimadoBody.gif); 
+    --altura: 100vh;
+    /* estilizando el body */
+    background: var(--imagen-fondo) no-repeat;
+    background-size: cover;
+    height: var(--altura);
+    font-size: var(--font-size);
+}
+/* Estilos del body */
+
+/* Estilos de la cabecera */
+header{
+    /* Variables header */
+    --altura: 7em; 
+    --gap: 1em;
+    /* Variables header */
+
+    /* Estilizando el header */    
+    height: var(--altura);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+    /* Estilizando el header */
+    
+}
+h1{
+    -webkit-text-stroke: .025em white;
+    text-shadow: .5em .5em .3em black;
+    text-align: center;
+}
+h2{
+    -webkit-text-stroke: .023em white;
+    text-shadow: .5em .5em .3em black;
+    font-size: 24px;
+}
+/* Aquí irán los estilos del resto del examen */
+
+/* Estilos relacionados con el main */
+main{
+    /* Variables del main */
+    --marginMain: 5em auto;  
+    --widthMain: 70%;
+    --espaciadoMain: 1em;
+    --text-shadowMain: 1px 1px 15px;
+    --backgroundMain: white;
+    --borderRadiusMain: 1em;
+    /* Variables del main */
+
+    /* Estilos del main */
+    margin: var(--margin-top) var(--margin-button);
+    color: var(--color-titulo);
+    display: flex;
+    flex-direction: column;
+    width: var(--widthMain);
+    margin: var(--marginMain);
+    gap: var(--espaciadoMain);
+    padding: var(--espaciadoMain);
+    background: var(--backgroundMain);
+    border-radius: var(--borderRadiusMain);
+    /* Estilos del main */
+    
+}
+
+main h2{
+    /* Variables del h2 */
+    --color-titulo: #162ff4;
+    --margin-top: 1em;
+    /* Variables del h2 */
+    
+    /* Estilos del h2 */
+    color: var(--color-titulo);
+    text-decoration: underline;
+    margin: var(--margin-top);
+    text-shadow: var(--text-shadow) var(--color-titulo);
+    /* Estilos del h2 */
+}
+main button{
+    --widthButton: 8em;
+    --marginButton: 0 auto;
+    --backgrounColor: aqua;
+    --paddingButton: 1em;
+
+    background: var(--backgrounColor);
+    width: var(--widthButton);
+    margin: var(--marginButton);
+    border: var(--none);
+    padding: var(--paddingButton);
+    box-shadow: .5em .5em rgb(6, 98, 98);
+}
+
+main button a{
+    color: black;
+}
+  
+/* Estilos relacionados con el main */
+
+/* Aquí irán los estilos generales del proyecto */

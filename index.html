@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Juego del botón</title>
+</head>
+<body>
+    <!-- <div class="loader"></div> -->
+    <header>
+        <h1>Juego del botón</h1>
+        <h2>Por ➡ Natalia cortés bernal</h2>
+    </header>
+    
+    <main>
+        <button><a href="pages/start.html">Start</a></button>
+        <button><a href="pages/help.html">Help</a></button>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            setTimeout (function(){
+                $(".loader").fadeOut("slow");
+            }, 3000)
+        });
+    </script>
+</body>
+</html>
