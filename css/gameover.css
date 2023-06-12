@@ -1,0 +1,4 @@
+#pantallaFinal{
+    --backgroundMain: brown;
+    background: var(--backgroundMain);
+}

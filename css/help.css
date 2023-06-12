@@ -1,0 +1,20 @@
+#reglas{
+    --espaciadoMain: 1rem;
+    --paddin: 5rem;
+    gap: var(--espaciadoMain);
+    padding: var(--paddin);
+}
+h2{
+    color: var(--color-titulo);
+    --text-shadow: .5em .5em .3em black;
+    --color-titulo: black !important;
+    text-shadow: var(--text-shadow) !important;
+    -webkit-text-stroke: .023em black !important;
+    text-align: center;
+}
+li{
+    width: 30em;
+    text-align: justify;
+    margin: 0 auto;
+    list-style: decimal;
+}

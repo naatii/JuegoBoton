@@ -92,15 +92,16 @@ h2{
 /* Estilos relacionados con el main */
 main{
     /* Variables del main */
-    --marginMain: 5em auto;  
-    --widthMain: 70%;
-    --espaciadoMain: 1em;
+    --marginMain: 2em auto;  
+    --widthMain: 55%;
+    --espaciadoMain: 5em;
     --text-shadowMain: 1px 1px 15px;
     --backgroundMain: white;
     --borderRadiusMain: 1em;
     /* Variables del main */
 
     /* Estilos del main */
+    height: 70%;
     margin: var(--margin-top) var(--margin-button);
     color: var(--color-titulo);
     display: flex;
@@ -116,6 +117,7 @@ main{
 }
 
 main h2{
+
     /* Variables del h2 */
     --color-titulo: #162ff4;
     --margin-top: 1em;
@@ -129,17 +131,16 @@ main h2{
     /* Estilos del h2 */
 }
 main button{
-    --widthButton: 8em;
+    --widthButton: 13em;
     --marginButton: 0 auto;
     --backgrounColor: aqua;
-    --paddingButton: 1em;
+    --paddingButton: 2em;
 
-    background: var(--backgrounColor);
     width: var(--widthButton);
     margin: var(--marginButton);
     border: var(--none);
     padding: var(--paddingButton);
-    box-shadow: .5em .5em rgb(6, 98, 98);
+    cursor: pointer;
 }
 
 main button a{

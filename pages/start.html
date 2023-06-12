@@ -14,14 +14,107 @@
         <h1>Juego del botón</h1>
     </header>
 
-    <main>
-        <div class="juego">
-            <button>Clícame</button>
+    <main id="tablero">
+        <p id="contador">0</p>
+        <a id="info"> <p id="powerups">powerups: </p><img src="../assets/info.png" alt="Botón de información"></a>
+        <span id="cartelInfo">
+            1.- velocidad X0.5 más lento -> 20 puntos<br>
+            2.- valocidad X1 más lento -> 50 puntos<br>
+            3.- Congelar 2 segundos -> 100 puntos
+        </span>
+       
+        <div id="juego" class="juego">
+            <button id="button"></button>
         </div>
     </main>
 
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
     <script>
-        
+        jQuery(document).ready(function ($) {
+            $("#info").on("click", function(){
+                $("#cartelInfo").css("display", "block")
+                $("powerups").css("visibility", "hidden")
+                setTimeout(function(){
+                    $("#cartelInfo").css("display", "none")
+                }, 5000)
+            })
+            var posicionx;
+            var posiciony;
+            var contador = 0;
+            var speed = 1;
+            $('#tablero').mouseover(function() {
+                if(contador > -100) {
+                        contador --
+                    }
+                    else if(contador == -100){
+                        contador = 0
+                        window.location.href = "gameover.html"
+                    }
+                    $('#contador').html(contador)
+            })
+            $('#button').click(function() {
+                console.log(contador)
+                if(contador > 100){
+                    var containerWidth = document.getElementById("juego").clientWidth
+                    var containerHeight = document.getElementById("juego").clientHeight
+                    posicionx = Math.random() * (containerWidth - containerHeight);
+                    posiciony = Math.random() * (containerWidth - containerHeight);
+                        setTimeout (function(){
+                            $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
+                            $("button").css("transition", `all ${speed}s ease`)
+                        }, 2000)
+                    }
+                else {
+                    var containerWidth = document.getElementById("juego").clientWidth
+                        var containerHeight = document.getElementById("juego").clientHeight
+                        posicionx = Math.random() * (containerWidth - containerHeight);
+                        posiciony = Math.random() * (containerWidth - containerHeight);
+                        $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
+                        $("button").css("transition", `all ${speed}s ease`)
+                }
+                    if(contador < 0) {
+                        contador += 20
+                    }
+                    else{
+                        contador +=2;
+                    }
+                    if(contador >= 20 && contador < 50){
+                        $('#powerups').html("Powerups: Speed x0.5")
+                        speed = 1.5
+                    }
+                    else if(contador >= 50 && contador < 100){
+                        $('#powerups').html("Powerups: Speed x1")
+                        speed = 2
+                    }
+                    else{
+                        $('#powerups').html("Powerups: ")
+                        speed = 1
+                        
+                    }
+                    
+                    $('#contador').html(contador)
+                });
+            $('#button').on("mouseover", function() {
+                if(contador > 100){
+                    var containerWidth = document.getElementById("juego").clientWidth
+                    var containerHeight = document.getElementById("juego").clientHeight
+                    posicionx = Math.random() * (containerWidth - containerHeight);
+                    posiciony = Math.random() * (containerWidth - containerHeight);
+                        setTimeout (function(){
+                            $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
+                            $("button").css("transition", `all ${speed}s ease`)
+                        }, 2000)
+                    }
+                else {
+                    var containerWidth = document.getElementById("juego").clientWidth
+                        var containerHeight = document.getElementById("juego").clientHeight
+                        posicionx = Math.random() * (containerWidth - containerHeight);
+                        posiciony = Math.random() * (containerWidth - containerHeight);
+                        $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
+                        $("button").css("transition", `all ${speed}s ease`)
+                }
+                });
+        });
     </script>
 </body>
 </html>
