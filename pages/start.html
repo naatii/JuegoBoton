@@ -28,8 +28,7 @@
     </main>
 
     <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
-    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
-    <script>
+        <script>
         jQuery(document).ready(function ($) {
             $("#info").on("click", function () {
                 $("#cartelInfo").css("display", "block")
@@ -115,7 +114,7 @@
             $('#button').on("mouseover", function () {
                 if (contador > 100) {
                     $('#powerups').html("Powerups: Freeze 2s")
-                    $('#powerups').css("margin", "-1em -4em 0 -4.5em")
+                    $('#powerups').css("margin", "-1em -4em -37px 1.5em")
                     var containerWidth = juego.offsetWidth - boton.offsetWidth*2
                     var containerHeight = juego.offsetHeight - boton.offsetHeight *2
                     var posicionx = Math.floor(Math.random() * containerWidth);
