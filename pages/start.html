@@ -83,8 +83,8 @@
                     speed = 2
                 }
                 else if (contador > 100) {
-                    var containerWidth = juego.offsetWidth - boton.offsetWidth
-                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth * 2
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight * 2
                     console.log(containerWidth)
                     console.log(containerHeight)
                     posicionx = Math.floor(Math.random() * containerWidth);
@@ -100,8 +100,8 @@
                     $('#powerups').html("Powerups: ")
                     $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
                     speed = 1
-                    var containerWidth = juego.offsetWidth - boton.offsetWidth
-                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth *2
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight *2
                     posicionx = Math.floor(Math.random() * containerWidth);
                     posiciony = Math.floor(Math.random() * containerHeight);
                     console.log(`${posicionx} -> ${posiciony}`)
@@ -116,8 +116,8 @@
                 if (contador > 100) {
                     $('#powerups').html("Powerups: Freeze 2s")
                     $('#powerups').css("margin", "-1em -4em 0 -4.5em")
-                    var containerWidth = juego.offsetWidth - boton.offsetWidth
-                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth*2
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight *2
                     var posicionx = Math.floor(Math.random() * containerWidth);
                     var posiciony = Math.floor(Math.random() * containerHeight);
                     console.log(posicionx)
@@ -131,8 +131,8 @@
                 else {
                     $('#powerups').html("Powerups: ")
                     $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
-                    var containerWidth = juego.offsetWidth - boton.offsetWidth
-                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth *2
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight *2
                     var posicionx = Math.floor(Math.random() * containerWidth);
                     var posiciony = Math.floor(Math.random() * containerHeight);
                     console.log(posicionx)
