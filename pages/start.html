@@ -22,98 +22,126 @@
             2.- valocidad X1 más lento -> 50 puntos<br>
             3.- Congelar 2 segundos -> 100 puntos
         </span>
-       
         <div id="juego" class="juego">
-            <button id="button"></button>
+            <button id="button">click</button>
         </div>
     </main>
 
     <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="../code.jquery.com_jquery-3.7.0.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
-            $("#info").on("click", function(){
+            $("#info").on("click", function () {
                 $("#cartelInfo").css("display", "block")
                 $("powerups").css("visibility", "hidden")
-                setTimeout(function(){
+                setTimeout(function () {
                     $("#cartelInfo").css("display", "none")
                 }, 5000)
             })
-            var posicionx;
-            var posiciony;
+            const juego = document.getElementById("juego")
+            const boton = document.getElementById("button")
             var contador = 0;
             var speed = 1;
-            $('#tablero').mouseover(function() {
-                if(contador > -100) {
-                        contador --
-                    }
-                    else if(contador == -100){
-                        contador = 0
-                        window.location.href = "gameover.html"
-                    }
-                    $('#contador').html(contador)
+            $('#tablero').mouseover(function () {
+                if (contador > -100) {
+                    contador--
+                }
+                else if (contador == -100) {
+                    contador = 0
+                    window.location.href = "gameover.html"
+                }
+                $('#contador').html(contador)
             })
-            $('#button').click(function() {
-                console.log(contador)
-                if(contador > 100){
-                    var containerWidth = document.getElementById("juego").clientWidth
-                    var containerHeight = document.getElementById("juego").clientHeight
-                    posicionx = Math.random() * (containerWidth - containerHeight);
-                    posiciony = Math.random() * (containerWidth - containerHeight);
-                        setTimeout (function(){
-                            $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
-                            $("button").css("transition", `all ${speed}s ease`)
-                        }, 2000)
-                    }
-                else {
-                    var containerWidth = document.getElementById("juego").clientWidth
-                        var containerHeight = document.getElementById("juego").clientHeight
-                        posicionx = Math.random() * (containerWidth - containerHeight);
-                        posiciony = Math.random() * (containerWidth - containerHeight);
-                        $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
-                        $("button").css("transition", `all ${speed}s ease`)
+            $('#button').click(function () {
+                if (contador < 0) {
+                    contador += 20
                 }
-                    if(contador < 0) {
-                        contador += 20
-                    }
-                    else{
-                        contador +=2;
-                    }
-                    if(contador >= 20 && contador < 50){
-                        $('#powerups').html("Powerups: Speed x0.5")
-                        speed = 1.5
-                    }
-                    else if(contador >= 50 && contador < 100){
-                        $('#powerups').html("Powerups: Speed x1")
-                        speed = 2
-                    }
-                    else{
-                        $('#powerups').html("Powerups: ")
-                        speed = 1
-                        
-                    }
-                    
-                    $('#contador').html(contador)
-                });
-            $('#button').on("mouseover", function() {
-                if(contador > 100){
-                    var containerWidth = document.getElementById("juego").clientWidth
-                    var containerHeight = document.getElementById("juego").clientHeight
-                    posicionx = Math.random() * (containerWidth - containerHeight);
-                    posiciony = Math.random() * (containerWidth - containerHeight);
-                        setTimeout (function(){
-                            $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
-                            $("button").css("transition", `all ${speed}s ease`)
-                        }, 2000)
-                    }
                 else {
-                    var containerWidth = document.getElementById("juego").clientWidth
-                        var containerHeight = document.getElementById("juego").clientHeight
-                        posicionx = Math.random() * (containerWidth - containerHeight);
-                        posiciony = Math.random() * (containerWidth - containerHeight);
-                        $("button").css("transform",  `translate(${posiciony-100}px, ${posicionx-100}px)`)
-                        $("button").css("transition", `all ${speed}s ease`)
+                    contador += 2;
                 }
-                });
+                if (contador >= 20 && contador < 50) {
+                    $('#powerups').html("Powerups: Speed x0.5")
+                    console.log(screen.width)
+                    if (window.innerWidth <= 768) {
+                        $('#powerups').css("margin", "-1em -5em 0 -4.5em")
+                    }
+                    else {
+                        $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
+
+                    }
+                    speed = 1.5
+                }
+                else if (contador >= 50 && contador < 100) {
+                    $('#powerups').html("Powerups: Speed x1")
+                    if (window.innerWidth <= 768) {
+                        $('#powerups').css("margin", "-1em -4em 0 -4.5em")
+                    }
+                    else {
+                        $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
+
+                    }
+                    speed = 2
+                }
+                else if (contador > 100) {
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    console.log(containerWidth)
+                    console.log(containerHeight)
+                    posicionx = Math.floor(Math.random() * containerWidth);
+                    posiciony = Math.floor(Math.random() * containerHeight);
+                    console.log(`${posicionx} -> ${posiciony}`)
+                    setTimeout(function () {
+                        boton.style.left = posicionx + "px"
+                        boton.style.top = posiciony + "px"
+                        $("button").css("transition", `all ${speed}s ease`)
+                    }, 2000)
+                }
+                else {
+                    $('#powerups').html("Powerups: ")
+                    $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
+                    speed = 1
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    posicionx = Math.floor(Math.random() * containerWidth);
+                    posiciony = Math.floor(Math.random() * containerHeight);
+                    console.log(`${posicionx} -> ${posiciony}`)
+                    boton.style.left = posicionx + "px"
+                    boton.style.top = posiciony + "px"
+                    $("button").css("transition", `all ${speed}s ease`)
+                }
+
+                $('#contador').html(contador)
+            });
+            $('#button').on("mouseover", function () {
+                if (contador > 100) {
+                    $('#powerups').html("Powerups: Freeze 2s")
+                    $('#powerups').css("margin", "-1em -4em 0 -4.5em")
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var posicionx = Math.floor(Math.random() * containerWidth);
+                    var posiciony = Math.floor(Math.random() * containerHeight);
+                    console.log(posicionx)
+                    console.log(posiciony)
+                    setTimeout(function () {
+                        boton.style.left = posicionx + "px"
+                        boton.style.top = posiciony + "px"
+                        $("button").css("transition", `all ${speed}s ease`)
+                    }, 2000)
+                }
+                else {
+                    $('#powerups').html("Powerups: ")
+                    $('#powerups').css("margin", "-1em -0.1em 0 -4.5em;")
+                    var containerWidth = juego.offsetWidth - boton.offsetWidth
+                    var containerHeight = juego.offsetHeight - boton.offsetHeight
+                    var posicionx = Math.floor(Math.random() * containerWidth);
+                    var posiciony = Math.floor(Math.random() * containerHeight);
+                    console.log(posicionx)
+                    console.log(posiciony)
+                    boton.style.left = posicionx + "px"
+                    boton.style.top = posiciony + "px"
+                    $("button").css("transition", `all ${speed}s ease`)
+                }
+            });
         });
     </script>
 </body>

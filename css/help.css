@@ -1,8 +1,20 @@
 #reglas{
-    --espaciadoMain: 1rem;
-    --paddin: 5rem;
+    --marginMain: 1em auto;  
+    --widthMain: 55%;
+    --espaciadoMain: 2em;
+    --text-shadowMain: 1px 1px 15px;
+    --backgroundMain: white;
+    --borderRadiusMain: 1em;
+    --espaciadoMain: .4rem;
     gap: var(--espaciadoMain);
-    padding: var(--paddin);
+    height: 60vh;
+    margin: var(--margin-top) var(--margin-button);
+    min-width: 10%;
+    max-width: var(--widthMain);
+    margin: var(--marginMain);
+    padding: var(--espaciadoMain);
+    background: var(--backgroundMain);
+    border-radius: var(--borderRadiusMain);
 }
 h2{
     color: var(--color-titulo);
@@ -10,11 +22,85 @@ h2{
     --color-titulo: black !important;
     text-shadow: var(--text-shadow) !important;
     -webkit-text-stroke: .023em black !important;
+
     text-align: center;
+    font-size: 2rem;
+    margin: 0 !important;
 }
-li{
-    width: 30em;
+#reglas div{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: stretch;
+}
+#reglas li{
+    font-size: 1.2rem;
+    max-width: 35em;
     text-align: justify;
-    margin: 0 auto;
     list-style: decimal;
+}
+#reglas button{
+    --widthButton: 5em;
+    --heightButton: 1em;
+    --backgrounColor: aqua;
+    --paddingButton: 1.5em;
+    --marginButton: 2em auto;
+
+    font-size: 1rem;
+    max-height: var(--heightButton);
+    width: var(--widthButton);
+    margin: var(--marginButton);
+    border: var(--none);
+    padding: var(--paddingButton);
+    cursor: pointer;
+    display: flex;
+    place-items: center;
+    gap: 1em;
+}
+@media only screen and (max-width: 768px) {
+    body{
+        font-size: 1rem;
+    }
+    main h2{
+        font-size: 1.5rem;
+    }
+    #reglas div{
+        font-size: .1rem;
+    }
+    
+    main button, a{
+        max-width: .5rem;
+        font-size: 1rem;
+        padding: .5rem;
+        max-height: .5rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 1900px) {
+    body{
+        font-size: 2rem;
+    }
+    main h2{
+        font-size: 2rem;
+    }
+    #reglas div{
+        font-size: 2rem;
+    }
+    #reglas li{
+        font-size: 1.5rem;
+    }
+    
+    main button, a{
+        max-width: 10rem;
+        font-size: 2rem;
+        max-height: 4rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
 }

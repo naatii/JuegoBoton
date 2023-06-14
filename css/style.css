@@ -90,33 +90,35 @@ h2{
 /* Aquí irán los estilos del resto del examen */
 
 /* Estilos relacionados con el main */
-main{
+.main{
     /* Variables del main */
-    --marginMain: 2em auto;  
+    --marginMain: 1em auto;  
     --widthMain: 55%;
-    --espaciadoMain: 5em;
+    --espaciadoMain: 2em;
     --text-shadowMain: 1px 1px 15px;
     --backgroundMain: white;
     --borderRadiusMain: 1em;
     /* Variables del main */
 
     /* Estilos del main */
-    height: 70%;
+    height: 60vh;
     margin: var(--margin-top) var(--margin-button);
     color: var(--color-titulo);
-    display: flex;
-    flex-direction: column;
-    width: var(--widthMain);
+    min-width: 10%;
+    max-width: var(--widthMain);
     margin: var(--marginMain);
-    gap: var(--espaciadoMain);
     padding: var(--espaciadoMain);
     background: var(--backgroundMain);
     border-radius: var(--borderRadiusMain);
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    gap: 1em;
     /* Estilos del main */
     
 }
 
-main h2{
+.main h2{
 
     /* Variables del h2 */
     --color-titulo: #162ff4;
@@ -130,17 +132,23 @@ main h2{
     text-shadow: var(--text-shadow) var(--color-titulo);
     /* Estilos del h2 */
 }
-main button{
-    --widthButton: 13em;
-    --marginButton: 0 auto;
+.main button{
+    --widthButton: 5em;
+    --heightButton: 1em;
     --backgrounColor: aqua;
-    --paddingButton: 2em;
+    --paddingButton: 1.5em;
+    --marginButton: 2em auto;
 
+    font-size: 1rem;
+    max-height: var(--heightButton);
     width: var(--widthButton);
     margin: var(--marginButton);
     border: var(--none);
     padding: var(--paddingButton);
     cursor: pointer;
+    display: flex;
+    place-items: center;
+    gap: 1em;
 }
 
 main button a{
@@ -150,3 +158,57 @@ main button a{
 /* Estilos relacionados con el main */
 
 /* Aquí irán los estilos generales del proyecto */
+
+/** responsive **/
+/* @media only screen and (max-width: 600px) {
+    body{
+        font-size: 1rem;
+    }
+    main {
+        gap: 2rem;
+        
+    }
+    main button, a{
+        min-width: .5rem;
+        font-size: 1rem;
+        max-width: 15rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
+} */
+ @media only screen and (max-width: 768px) {
+    body{
+        font-size: 1rem;
+    }
+    main {
+        gap: 1rem;
+    }
+    main button, a{
+        font-size: 1rem;
+        max-width: 7rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
+}
+/*@media only screen and (max-width: 2000px) {
+    body{
+        font-size: 1rem;
+    }
+    main {
+        font-size: 1rem;
+        max-height: 30rem;
+        gap: 2rem;
+    }
+    main button, a{
+        min-width: .5rem;
+        font-size: 1rem;
+        max-width: 20rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
+} */
+
+/** responsive **/
